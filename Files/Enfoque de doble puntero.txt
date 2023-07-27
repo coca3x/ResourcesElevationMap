@@ -1,0 +1,6 @@
+El enfoque de doble puntero es una técnica utilizada para resolver problemas que involucran listas o arreglos ordenados de datos. 
+
+Para la solución de este problema utilicé:
+- Enfoque de dos punteros en direcciones opuestas: Esta técnica es útil para encontrar pares de elementos que cumplan cierta condición o para reducir el espacio de búsqueda en el arreglo.
+
+La ventaja del enfoque de doble puntero es que suele ser más eficiente en términos de tiempo de ejecución que otros enfoques, reduce la cantidad de iteraciones necesarias para resolver el problema. Al desplazar dos punteros de manera coordinada, se puede evitar la necesidad de realizar múltiples bucles anidados, lo que puede conducir a una solución más rápida.

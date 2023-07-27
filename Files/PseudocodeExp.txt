@@ -1,0 +1,51 @@
+//Declarar función
+FUNCION operation(height):
+//Contar numero de elementos tiene el arreglo y nos servirá para iterar en él.
+    elements = LONGITUD(height)
+    SI elements <= 2:
+        RETORNAR 0
+
+    //Inicializamos dos punteros left y right al comienzo y al final del arreglo height.
+    left = 0
+    right = elements - 1
+    //Almacernar los valores máximos de right y left
+    left_max = 0
+    right_max = 0
+    //Almacenar espacios de agua
+    water = 0
+
+    //Esto es un idicador que no hemos recorrido todo el arreglo
+    //Ya que lo estamos recorriendo desde los extremos
+    MIENTRAS left < right:
+        //Comparar la altura de left con right.
+        SI height[left] < height[right]:
+            //Si left es mayor que left max, actualizamos left_max
+            SI height[left] > left_max:
+            //Almacenar el valor en left_max
+                left_max = height[left]
+            //Si left es menor o igual a left_max esto puede contener agua
+            SINO:
+            //Para ello restar left de left_max
+                water += left_max - height[left]
+            //Incrementar left para siguiente posición
+            left += 1
+
+        //La altura en right es menor o igual a la altura de left
+        SINO:
+            SI height[right] > right_max:
+                right_max = height[right]
+
+            //Si la altura en la posición right es menor o igual a right_max podemos 
+            //atrapar agua en esa posición. 
+            SINO:
+            //Cálculo de la cantidad de agua que podemos atrapar 
+            //restando la altura de la barra en la posición right de 
+            //la altura máxima encontrada desde la derecha right_max
+            //Y se agrega a water
+                water += right_max - height[right]
+            //Disminuir right para pasar a la siguiente posición en el arreglo
+            right -= 1
+
+    RETORNAR water
+
+FIN FUNCION
