@@ -1,0 +1,3 @@
+Create new  Docker container MSQL
+
+docker run --name sqlserver -p 1433:1433 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Lem0nCode!" -d mcr.microsoft.com/mssql/server:2019-latest
